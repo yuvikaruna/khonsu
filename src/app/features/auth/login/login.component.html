@@ -1,0 +1,61 @@
+<div class="login-container full-width-image">
+    <form [formGroup]="loginForm">
+        <mat-card class="b-d-1rm">
+            <!-- <mat-card-title>Khonsu</mat-card-title> -->
+            <mat-card-subtitle>Log in to your account</mat-card-subtitle>
+            <mat-card-content>
+
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>User Name</mat-label>
+                    <input id="emailInput" matInput placeholder="Enter your User Name" formControlName="email" autocomplete="email"
+                    type="email">
+                    <mat-icon matSuffix>email</mat-icon>
+
+                    <!-- <mat-error id="invalidEmailError" *ngIf="loginForm.controls['email'].hasError('email')">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error id="requiredEmailError" *ngIf="loginForm.controls['email'].hasError('required')">
+                        Email is
+                        required
+                    </mat-error> -->
+                  </mat-form-field>
+
+
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Enter your Password" formControlName="password" type="password"
+                    autocomplete="current-password" [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <!-- <mat-error id="requiredPasswordError" *ngIf="loginForm.controls['email'].hasError('required')">
+                        Password is
+                       required
+                    </mat-error> -->
+                    <mat-hint>
+                        <span mat-button id="resetPassword" (click)="resetPassword()" type="button">Reset Password</span>
+                        <!-- <a>Reset Password</a> -->
+                    </mat-hint>
+                  </mat-form-field>
+                  
+                <!-- <div class="full-width"> -->
+                       <p>
+                           <mat-checkbox class="example-margin" formControlName="rememberMe" color="primary">Remember me</mat-checkbox>
+                       </p> 
+                    <!-- </div> -->
+            </mat-card-content>
+
+            <mat-card-actions class="login-actions">
+                <button mat-raised-button  color="primary" [disabled]="loginForm.invalid || loading"
+                    (click)="login()">Sign In</button>
+            </mat-card-actions>
+
+        </mat-card>
+
+        <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    </form>
+    <section class="footer-container">
+
+        <app-logo-copyright></app-logo-copyright>
+    </section>
+</div>

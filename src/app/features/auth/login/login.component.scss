@@ -1,0 +1,42 @@
+.login-container{
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    justify-content: space-between;
+
+    form{
+        flex-direction: row;
+        box-sizing: border-box;
+        display: flex;
+        place-content: center;
+        align-items: center;
+        flex-grow: 1;
+    }
+}
+
+.full-width-image {
+    min-height: 100vh;
+    width: 100vw;
+    background: url(../../../../assets/images/bgImg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login-actions{
+    display: flex;
+    justify-content: center;
+
+    button{
+        flex-grow: 1;
+        margin-bottom: 1rem;
+    }
+}
+.footer-container{
+    width: 90%;
+    margin-bottom: 1rem;
+}
+
+.b-d-1rm{
+    border-radius: .5rem !important;
+}
