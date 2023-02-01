@@ -31,6 +31,7 @@
   /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
            causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
   flex: 1;
+  background-color: rgb(223, 222, 222) !important;
 }
 
 .navbar-is-mobile .navbar-sidenav-container {
@@ -61,4 +62,8 @@ a.mat-list-item.active {
 #push-bottom {
   position: absolute;
   bottom: 0;
+}
+
+.mat-drawer {
+  width: 250px;
 }

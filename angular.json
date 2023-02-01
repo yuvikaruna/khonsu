@@ -7,8 +7,8 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
-          "style": "scss",
-          "strict": true
+          "strict": true,
+          "style": "scss"
         }
       },
       "root": "",

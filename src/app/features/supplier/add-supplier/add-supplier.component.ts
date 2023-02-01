@@ -3,13 +3,12 @@ import { Title } from '@angular/platform-browser';
 
 import { NGXLogger } from 'ngx-logger';
 import { NotificationService } from 'src/app/core/services/notification.service';
-
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  selector: 'app-add-supplier',
+  templateUrl: './add-supplier.component.html',
+  styleUrls: ['./add-supplier.component.scss']
 })
-export class UserListComponent implements OnInit {
+export class AddSupplierComponent implements OnInit {
 
   constructor(
     private logger: NGXLogger,
@@ -18,7 +17,8 @@ export class UserListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.titleService.setTitle('Khonsu - Users');
-    this.logger.log('Users loaded');
+    this.titleService.setTitle('Khonsu - Add Supplier');
+    this.logger.log('Add Supplier loaded');
   }
+
 }

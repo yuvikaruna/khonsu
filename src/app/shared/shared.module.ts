@@ -11,6 +11,7 @@ import { LocalDatePipe } from './pipes/local-date.pipe';
 import { YesNoPipe } from './pipes/yes-no.pipe';
 import { LayoutComponent } from './layout/layout.component';
 import { LogoCopyrightComponent } from './logo-copyright/logo-copyright.component';
+import { SideNavbarComponent } from './side-navbar/side-navbar.component';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import { LogoCopyrightComponent } from './logo-copyright/logo-copyright.componen
         LocalDatePipe,
         YesNoPipe,
         LayoutComponent,
-        LogoCopyrightComponent
+        LogoCopyrightComponent,
+        SideNavbarComponent
     ],
     exports: [
         FormsModule,
@@ -39,7 +41,8 @@ import { LogoCopyrightComponent } from './logo-copyright/logo-copyright.componen
         ContentPlaceholderAnimationComponent,
         LocalDatePipe,
         YesNoPipe,
-        LogoCopyrightComponent
+        LogoCopyrightComponent,
+        SideNavbarComponent
     ]
 })
 export class SharedModule { }

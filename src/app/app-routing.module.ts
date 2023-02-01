@@ -14,25 +14,15 @@ const appRoutes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'customers',
-    loadChildren: () => import('./features/customers/customers.module').then(m => m.CustomersModule),
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'users',
-    loadChildren: () => import('./features/users/users.module').then(m => m.UsersModule),
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'account',
     loadChildren: () => import('./features/account/account.module').then(m => m.AccountModule),
     canActivate: [AuthGuard]
   },
-  // {
-  //   path: 'typography',
-  //   loadChildren: () => import('./features/typography/typography.module').then(m => m.TypographyModule),
-  //   canActivate: [AuthGuard]
-  // },
+  {
+    path: 'supplier',
+    loadChildren: () => import('./features/supplier/supplier.module').then(m => m.SupplierModule),
+    canActivate: [AuthGuard]
+  },
   {
     path: 'about',
     loadChildren: () => import('./features/about/about.module').then(m => m.AboutModule),

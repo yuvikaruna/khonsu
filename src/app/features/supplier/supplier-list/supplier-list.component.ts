@@ -26,11 +26,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-customer-list',
-  templateUrl: './customer-list.component.html',
-  styleUrls: ['./customer-list.component.css']
+  selector: 'app-supplier-list',
+  templateUrl: './supplier-list.component.html',
+  styleUrls: ['./supplier-list.component.scss']
 })
-export class CustomerListComponent implements OnInit {
+export class SupplierListComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 

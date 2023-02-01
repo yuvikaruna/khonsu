@@ -55,79 +55,10 @@
 
   <mat-sidenav-container class="navbar-sidenav-container">
     <!-- Side nav -->
-    <mat-sidenav #snav [opened]="!mobileQuery.matches" [mode]="mobileQuery.matches ? 'over' : 'side'"
+ <mat-sidenav #snav [opened]="!mobileQuery.matches" [mode]="mobileQuery.matches ? 'over' : 'side'"
       [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" class="sidenav">
-
-      <mat-nav-list>
-        <h3 mat-subheader>Home</h3>
-
-        <a mat-list-item [routerLink]="['/dashboard']" routerLinkActive="active">
-          <mat-icon mat-list-icon>
-            dashboard
-          </mat-icon>
-          <p mat-line> Dashboard </p>
-        </a>
-        <mat-expansion-panel [class.mat-elevation-z0]="true">
-          <mat-expansion-panel-header>
-            <mat-icon mat-list-icon>
-              business
-            </mat-icon>  Supplier
-          </mat-expansion-panel-header>
-          <mat-nav-list>
-            <a mat-list-item [routerLink]="['/customers']" routerLinkActive="active">
-              <mat-icon mat-list-icon>
-                business
-              </mat-icon>
-              <p mat-line> Add Supplier </p>
-            </a>
-            <a mat-list-item [routerLink]="['/customers']" routerLinkActive="active">
-              <mat-icon mat-list-icon>
-                business
-              </mat-icon>
-              <p mat-line> Supplier List</p>
-            </a>
-          </mat-nav-list>
-      </mat-expansion-panel>
-
-        <a mat-list-item [routerLink]="['/users']" routerLinkActive="active">
-          <mat-icon mat-list-icon>
-            people
-          </mat-icon>
-          <p mat-line> Users </p>
-        </a>
-
-
-<!--   <a mat-list-item [routerLink]="['/account/profile']">
-          <mat-icon mat-list-icon>person</mat-icon>
-          <p mat-line> Account </p>
-        </a>
-
-        <a mat-list-item [routerLink]="['/auth/login']">
-          <mat-icon mat-list-icon>exit_to_app</mat-icon>
-          <p mat-line> Log out </p>
-        </a> -->
-        <mat-divider></mat-divider>
-
-        <h3 mat-subheader>Reports</h3>
-
-        <a mat-list-item [routerLink]="['/typography']" routerLinkActive="active">
-          <mat-icon mat-list-icon>
-            font_download
-          </mat-icon>
-          <p mat-line> User Reports </p>
-        </a>
-
-
-        <a id="push-bottom" mat-list-item [routerLink]="['/about']" routerLinkActive="active">
-          <mat-icon mat-list-icon>
-            info_outline
-          </mat-icon>
-          <p mat-line> About </p>
-        </a>
-      </mat-nav-list>
-
+      <app-side-navbar></app-side-navbar>
     </mat-sidenav>
-
     <!-- Main content -->
     <mat-sidenav-content class="sidenav-content">
 
