@@ -1,24 +1,34 @@
 <div class="container" fxLayout="row" fxLayoutAlign="center none">
-    <div fxFlex="95%">
-  
-      <mat-card>
-        <mat-card-content>
-          <h2>Add Supplier</h2>
-  
-<!--   
-          <div class="container" fxLayout="row" fxLayoutAlign="center none">
-          
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-content fxLayout="column">
+        <h2>Add Supplier</h2>
+        <div class="container" fxFlex="80" fxLayoutAlign="center none">
+          <form [formGroup]="supplierForm">
+            <ng-container *ngFor="let formObj of formControlValues ">
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>{{formObj.label}}</mat-label>
+                <input matInput placeholder="{{formObj.placeholder}}" [formControlName]="formObj.formControlName" [type]="formObj.inputType" />
+                <mat-error *ngFor="let error of formObj.validatorsList">
+                    <ng-container *ngIf="supplierForm.controls[formObj.formControlName].touched && supplierForm.controls[formObj.formControlName].hasError(error)">
+                    {{formObj.label}} is {{error}}
+                  </ng-container>
+                  </mat-error>
+              </mat-form-field>
+            </ng-container>
 
+          </form>
+        </div>
 
-            <div class="form-element">
-              <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Submit Form</button>
-            </div>
+      </mat-card-content>
+      <mat-card-actions class="button-actions">
+        <button mat-raised-button color="primary" [disabled]="supplierForm.invalid || loading" (click)="addSupplier()">
+          Add Supplier
+        </button>
+      </mat-card-actions>
+      <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
 
-            
-          </div> -->
-  
-        </mat-card-content>
-      </mat-card>
-  
-    </div>
+    </mat-card>
+
   </div>
+</div>

@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
     private authenticationService: AuthenticationService
   ) // private alertService: AlertService
   {
-    // redirect to home if already logged in
+    // TODO: redirect to home if already logged in
     // if (this.accountService.userValue) {
     //   this.router.navigate(["/"]);
     // }
