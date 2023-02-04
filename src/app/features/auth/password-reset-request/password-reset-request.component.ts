@@ -38,7 +38,9 @@ export class PasswordResetRequestComponent implements OnInit {
     this.authService.passwordResetRequest(this.email)
       .subscribe(
         results => {
-          this.router.navigate(['/auth/login']);
+          // TODO: update here once email auth is activated
+          // this.router.navigate(['/auth/login']);  
+          this.router.navigate(['/auth/password-reset']);  
           this.notificationService.openSnackBar('Password verification mail has been sent to your email address.');
         },
         error => {

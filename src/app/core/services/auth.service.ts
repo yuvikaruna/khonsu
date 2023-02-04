@@ -6,6 +6,7 @@ import * as moment from 'moment';
 
 import { environment } from '../../../environments/environment';
 import { of, EMPTY } from 'rxjs';
+import { User } from 'src/app/shared/interface/IMenu';
 
 @Injectable({
     providedIn: 'root'
@@ -68,4 +69,8 @@ export class AuthenticationService {
     passwordReset(email: string, token: string, password: string, confirmPassword: string): any {
         return of(true).pipe(delay(1000));
     }
+
+    register(user: User) {
+        return of(true).pipe(delay(1000));
+      }
 }
