@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
     "test": "ng test",
-    "build-production": "ng build --configuration=production --base-href=/khonsu/"
+    "build-production": "ng build --configuration=production --base-href=/khonsu/",
+    "deploy": "ng deploy --base-href=/khonsu/"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +44,7 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
+    "angular-cli-ghpages": "^1.0.5",
     "eslint": "^8.23.0",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
