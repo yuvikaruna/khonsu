@@ -2,7 +2,7 @@
   <div fxFlex="95%">
     <mat-card>
       <mat-card-content fxLayout="column">
-        <h2>Add Supplier</h2>
+        <h2>{{PAGE_TYPE}}</h2>
         <div class="container" fxFlex="80" fxLayoutAlign="center none">
           <form [formGroup]="supplierForm">
             <ng-container *ngFor="let formObj of formControlValues ">
@@ -26,7 +26,7 @@
       </mat-card-content>
       <mat-card-actions class="button-actions">
         <button mat-raised-button color="primary" [disabled]="supplierForm.invalid || loading" (click)="addSupplier()">
-          Add Supplier
+          {{PAGE_TYPE}}
         </button>
       </mat-card-actions>
       <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>

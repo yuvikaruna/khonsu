@@ -142,11 +142,19 @@ p .mat-icon {
   animation-fill-mode: forwards;
 }
 
+.fix-suffix.mat-form-field-appearance-outline .mat-form-field-prefix {
+  top: -0.25em;
+}
 .fix-suffix.mat-form-field-appearance-outline:not(.mat-form-field-hide-placeholder) .mat-form-field-prefix {
   top: 0px;
 }
-.fix-suffix.mat-form-field-appearance-outline .mat-form-field-prefix {
-  top: -2px;
+
+// supplier list page
+.mat-table.supplier-list td.mat-cell:last-child,
+.mat-table.supplier-list td.mat-footer-cell:last-child,
+.mat-table.supplier-list th.mat-header-cell:last-child {
+  width: 8rem;
+  text-align: center;
 }
 
 @keyframes show {
