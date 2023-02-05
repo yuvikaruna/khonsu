@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:prod": "ng build --configuration=production --deploy-url=https://yuvikaruna.github.io/khonsu/",
+    "build:prod": "ng build --configuration=production --deploy-url=https://yuvikaruna.github.io/khonsu/ --base-href https://yuvikaruna.github.io/khonsu/",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
     "test": "ng test",
