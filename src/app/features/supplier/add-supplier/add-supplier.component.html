@@ -6,14 +6,17 @@
         <div class="container" fxFlex="80" fxLayoutAlign="center none">
           <form [formGroup]="supplierForm">
             <ng-container *ngFor="let formObj of formControlValues ">
-              <mat-form-field class="full-width" appearance="outline">
+              <mat-form-field class="full-width fix-suffix" appearance="outline">
                 <mat-label>{{formObj.label}}</mat-label>
-                <input matInput placeholder="{{formObj.placeholder}}" [formControlName]="formObj.formControlName" [type]="formObj.inputType" />
+                <input matInput placeholder="{{formObj.placeholder}}" [formControlName]="formObj.formControlName"
+                  [type]="formObj.inputType" />
+                <span matPrefix *ngIf="(formObj.formControlName === 'mobileNum') || (formObj.formControlName === 'ownerMobileNum')">+ 91 &nbsp;</span>
                 <mat-error *ngFor="let error of formObj.validatorsList">
-                    <ng-container *ngIf="supplierForm.controls[formObj.formControlName].touched && supplierForm.controls[formObj.formControlName].hasError(error)">
+                  <ng-container
+                    *ngIf="supplierForm.controls[formObj.formControlName].touched && supplierForm.controls[formObj.formControlName].hasError(error)">
                     {{formObj.label}} is {{error}}
                   </ng-container>
-                  </mat-error>
+                </mat-error>
               </mat-form-field>
             </ng-container>
 

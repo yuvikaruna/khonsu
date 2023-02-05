@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { first } from "rxjs/operators";
 // import { AccountService, AlertService } from "../../shared/services";
-import { MustMatch } from "src/app/shared/validators/must-match.validator";
+import { MustMatch } from "./../../../shared/validators";
 import { AuthenticationService } from "src/app/core/services/auth.service";
 
 @Component({

@@ -4,7 +4,11 @@ import { Title } from "@angular/platform-browser";
 
 import { NGXLogger } from "ngx-logger";
 import { NotificationService } from "src/app/core/services/notification.service";
-import { GSTNumberValidator } from "src/app/shared/validators/gst-number.validator";
+import {
+  GSTNumberValidator,
+  MobileNumberValidator,
+  PinCodeValidator,
+} from "./../../../shared/validators";
 
 @Component({
   selector: "app-add-supplier",
@@ -27,8 +31,15 @@ export class AddSupplierComponent implements OnInit {
       label: "Mobile Number",
       placeholder: "Enter your Mobile Number",
       formControlName: "mobileNum",
-      inputType: "number",
-      validatorsList: ["required"],
+      inputType: "text",
+      validatorsList: ["required", "invalid"],
+    },
+    {
+      label: "GSTIN/TIN Number",
+      placeholder: "Enter your GSTIN/TIN Number",
+      formControlName: "gstNum",
+      inputType: "string",
+      validatorsList: ["required", "invalid"],
     },
     {
       label: "Owner Name",
@@ -38,10 +49,10 @@ export class AddSupplierComponent implements OnInit {
       validatorsList: ["required"],
     },
     {
-      label: "GSTIN/TIN Number",
-      placeholder: "Enter your GSTIN/TIN Number",
-      formControlName: "gstNum",
-      inputType: "string",
+      label: "Owner Mobile Number",
+      placeholder: "Enter your Owner Mobile Number",
+      formControlName: "ownerMobileNum",
+      inputType: "text",
       validatorsList: ["required", "invalid"],
     },
     {
@@ -63,7 +74,7 @@ export class AddSupplierComponent implements OnInit {
       placeholder: "Enter your Pin Code",
       formControlName: "pinCode",
       inputType: "number",
-      validatorsList: ["required"],
+      validatorsList: ["required",'invalid'],
     },
     {
       label: "Remarks",
@@ -87,13 +98,13 @@ export class AddSupplierComponent implements OnInit {
 
     this.supplierForm = this.fb.group({
       supplierName: ["", Validators.required],
-      mobileNum: ["", [Validators.required]],
+      mobileNum: ["", [Validators.required, MobileNumberValidator(), Validators.minLength(10), Validators.maxLength(10)]],
       gstNum: ["", [Validators.required, GSTNumberValidator()]],
       ownerName: ["", Validators.required],
-      mobileNo: ["", Validators.required],
+      ownerMobileNum: ["", [Validators.required, MobileNumberValidator(), Validators.minLength(10), Validators.maxLength(10)]],
       shopAddress: ["", Validators.required],
       city: ["", Validators.required],
-      pinCode: ["", Validators.required],
+      pinCode: ["", [Validators.required, PinCodeValidator()]],
       remarks: [""],
     });
   }

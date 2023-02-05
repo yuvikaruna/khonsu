@@ -142,6 +142,13 @@ p .mat-icon {
   animation-fill-mode: forwards;
 }
 
+.fix-suffix.mat-form-field-appearance-outline:not(.mat-form-field-hide-placeholder) .mat-form-field-prefix {
+  top: 0px;
+}
+.fix-suffix.mat-form-field-appearance-outline .mat-form-field-prefix {
+  top: -2px;
+}
+
 @keyframes show {
   from {
     opacity: 0;
