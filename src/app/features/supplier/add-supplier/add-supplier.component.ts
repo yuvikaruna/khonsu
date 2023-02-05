@@ -105,10 +105,9 @@ export class AddSupplierComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.titleService.setTitle("Khonsu - " + this.PAGE_TYPE);
-    this.logger.log(this.PAGE_TYPE + " loaded");
     this.PAGE_TYPE = this.route.snapshot.params['id'] ? this.SUPPLIER_TYPE.EDIT : this.SUPPLIER_TYPE.ADD;
-
+    this.logger.log(this.PAGE_TYPE + " loaded");
+    this.titleService.setTitle("Khonsu - " + this.PAGE_TYPE);
 
 
     this.supplierForm = this.fb.group({
