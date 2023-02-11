@@ -4,5 +4,5 @@ export const environment = {
   production: true,
   logLevel: NgxLoggerLevel.OFF,
   serverLogLevel: NgxLoggerLevel.ERROR,
-  API_URL:''
+  API_URL:'https://yuvikaruna.github.io/khonsu'
 };
