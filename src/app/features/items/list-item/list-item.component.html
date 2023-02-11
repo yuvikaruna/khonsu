@@ -1,0 +1,56 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+    <div fxFlex="95%">
+  
+      <mat-card>
+        <mat-card-content>
+          <h2>{{PAGE_TYPE}}</h2>
+  
+          <table mat-table [dataSource]="dataSource" matSort class="supplier-list">
+            
+            <ng-container matColumnDef="item_id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Item ID </th>
+              <td mat-cell *matCellDef="let element"> <span class="mobile-label">Item ID :</span> {{element.item_id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="item_name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Item Name </th>
+                <td mat-cell *matCellDef="let element"> <span class="mobile-label">Item Name :</span> {{element.item_name}} </td>
+              </ng-container>
+          
+            <ng-container matColumnDef="type">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+              <td mat-cell *matCellDef="let element"> <span class="mobile-label">Type :</span> {{element.type}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="certification">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Certification </th>
+              <td mat-cell *matCellDef="let element"> <span class="mobile-label">Certification :</span> {{element.certification}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="remarks">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Remarks </th>
+              <td mat-cell *matCellDef="let element"> <span class="mobile-label">Remarks :</span> {{element.remarks}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Actions </th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-button color="primary" (click)="editSupplier(element)">
+                  <mat-icon>edit</mat-icon> <span class="mobile-label">Edit</span> 
+                </button>
+                
+                <button mat-button color="accent" (click)="deleteSupplier(element)">
+                  <mat-icon>delete</mat-icon> <span class="mobile-label">Delete</span> 
+                </button>  
+              </td>         
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+        </mat-card-content>
+      </mat-card>
+  
+    </div>
+  </div>

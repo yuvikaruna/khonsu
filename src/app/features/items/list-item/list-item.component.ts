@@ -7,38 +7,33 @@ import { NotificationService } from "src/app/core/services/notification.service"
 import { Router } from "@angular/router";
 import { SupplierService } from "src/app/shared/services/supplier.service";
 
-export interface SupplierList {
-  supplier_id: Number;
-  supplier_name: string;
-  position: number;
-  phone: number;
-  email: string;
-  gst: string;
-  status: string;
-  shop_name: string;
+export interface ItemsList {
+  item_id: Number;
+  item_name: string;
+  type: string;
+  certification: string;
+  remarks: string;
 }
 
 @Component({
-  selector: "app-supplier-list",
-  templateUrl: "./supplier-list.component.html",
-  styleUrls: ["./supplier-list.component.scss"],
+  selector: 'app-list-item',
+  templateUrl: './list-item.component.html',
+  styleUrls: ['./list-item.component.scss']
 })
-export class SupplierListComponent implements OnInit {
+export class ListItemComponent implements OnInit {
   displayedColumns: string[] = [
-    "position",
-    "supplier_name",
-    "phone",
-    "email",
-    "shop_name",
-    "gst",
-    "status",
+    "item_id",
+    "item_name",
+    "type",
+    "certification",
+    "remarks",
     "actions",
   ];
 
   @ViewChild(MatSort, { static: true })
   sort: MatSort = new MatSort();
-  dataSource: MatTableDataSource<SupplierList>;
-  PAGE_TYPE : string = "Suppliers List";
+  dataSource: MatTableDataSource<ItemsList>;
+  PAGE_TYPE : string = "Items List";
 
   constructor(
     private logger: NGXLogger,
@@ -49,25 +44,25 @@ export class SupplierListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getSupplierList();
+    this.getItemsList();
     this.titleService.setTitle("Khonsu - " + this.PAGE_TYPE);
     this.logger.log("Customers loaded");
     this.notificationService.openSnackBar("Customers loaded");
   }
   
-  getSupplierList() {
-    this.supplierService.getSupplierList().subscribe((data: SupplierList[]) => {
+  getItemsList() {
+    this.supplierService.getItemsList().subscribe((data: ItemsList[]) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.sort = this.sort;
     });
   }
 
-  editSupplier(supplier: SupplierList) {
-    this.router.navigate(["supplier/edit/" + supplier.supplier_id],{state: {supplier: supplier}});
+  editSupplier(items: ItemsList) {
+    this.router.navigate(["items/edit/" + items.item_id],{state: {items: items}});
 
   }
 
-  deleteSupplier(supplier: SupplierList) {
-    console.log(supplier);
+  deleteSupplier(items: ItemsList) {
+    console.log(items);
   }
 }

@@ -24,6 +24,21 @@
         "routerLink": "/customers"
     },
     {
+        "text": "Items",
+        "icon": "shopping_cart",
+        "children": [{
+            "text": "Add Items",
+            "icon": "add",
+            "routerLink": "/items/add"
+        },
+        {
+            "text": "Items List",
+            "icon": "list",
+            "routerLink": "/items/list"
+        }
+    ]
+    },
+    {
         "text": "Suit",
         "icon": "inventory_2",
         "children": [{

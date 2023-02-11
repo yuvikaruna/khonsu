@@ -1,0 +1,68 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+    <div fxFlex="95%">
+        <mat-card>
+            <mat-card-content fxLayout="column">
+                <h2>{{PAGE_TYPE}}</h2>
+                <div class="container" fxFlex="80" fxLayoutAlign="center none">
+                    <form [formGroup]="itemsForm">
+                        <mat-form-field class="full-width fix-suffix" appearance="outline">
+                            <mat-label>Item ID</mat-label>
+                            <input matInput placeholder="Enter your Item ID" formControlName="itemId" type="number" />
+                            <mat-error
+                                *ngIf="itemsForm.controls['itemId'].touched && itemsForm.controls['itemId'].hasError('required')">
+                                Item ID is required
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="full-width fix-suffix" appearance="outline">
+                            <mat-label>Item Name</mat-label>
+                            <input matInput placeholder="Enter your Item Name" formControlName="itemName" type="text" />
+                            <mat-error
+                                *ngIf="itemsForm.controls['itemName'].touched && itemsForm.controls['itemName'].hasError('required')">
+                                Item Name is required
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="full-width fix-suffix" appearance="outline">
+                            <mat-label>Item Type</mat-label>
+                            <mat-select formControlName="type">
+                                <mat-option *ngFor="let food of typesArr" [value]="food.value" >
+                                    {{food.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error
+                                *ngIf="itemsForm.controls['type'].touched && itemsForm.controls['type'].hasError('required')">
+                                Item ID is required
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="full-width fix-suffix" appearance="outline">
+                            <mat-label>Item Certification</mat-label>
+                            <mat-select formControlName="certification">
+                                <mat-option *ngFor="let food of certificationArr" [value]="food.value" >
+                                    {{food.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error
+                                *ngIf="itemsForm.controls['certification'].touched && itemsForm.controls['certification'].hasError('required')">
+                                Item certification is required
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="full-width fix-suffix" appearance="outline">
+                            <mat-label>Remarks</mat-label>
+                            <input matInput placeholder="Enter your remarks" formControlName="remarks" type="text" />
+                        </mat-form-field>
+
+                    </form>
+                </div>
+
+            </mat-card-content>
+            <mat-card-actions class="button-actions">
+                <button mat-raised-button color="primary" [disabled]="itemsForm.invalid || loading"
+                    (click)="addSupplier()">
+                    {{PAGE_TYPE}}
+                </button>
+            </mat-card-actions>
+            <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+        </mat-card>
+
+    </div>
+</div>

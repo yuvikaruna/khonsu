@@ -1,0 +1,33 @@
+.container{
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    justify-content: space-between;
+
+    form{
+        flex-direction: column;
+        box-sizing: border-box;
+        display: flex;
+        place-content: center;
+        align-items: center;
+        flex-grow: 1;
+    }
+}
+
+
+.button-actions{
+    display: flex;
+    justify-content: center;
+
+    button{
+        flex-grow: 1;
+        margin-bottom: 1rem;
+    }
+}
+
+.b-d-1rm{
+    border-radius: .5rem !important;
+}
+
